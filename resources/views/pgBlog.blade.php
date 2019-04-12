@@ -18,15 +18,32 @@
     
     <div class="hero is-light is-fullheight">
     <section class="section">
-        @foreach ($post as $posts)            
-        
-        <div class="container">
-            <div class="box">
-                <h2>{{$posts->blogPost_titulo}}</h2>
-                <p>{{$posts->blogPost_msg}}</p>
+        @foreach ($post as $posts)
+            <div class="container">
+                <div class="box">
+                    <div class="columns">
+                        <div class="column is-2">
+                            <figure class="image is-4by3">
+                                <img src="img/logo.jpg">    
+                            </figure>
+                            
+                        </div>                                       
+
+                        <div class="column is-10">
+                            <p class="title article-title">{{$posts->blogPost_titulo}}</p>
+                            <div class="tags has-addons">
+                                    <span class="tag is-rounded is-info">@skeetskeet</span>
+                                    <span class="tag is-rounded">May 10, 2018</span>
+                            </div>
+
+                            <div class="content article-body">
+                                <p>{{$posts->blogPost_msg}}</p>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <br>
+            <br>
         @endforeach
     </section>
     </div>
