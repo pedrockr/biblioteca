@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    @include('layout.menuInicial')
+    @include('layout.menuInicial')a
     
     <div class="hero is-light is-fullheight">
     <section class="section">
