@@ -1,14 +1,26 @@
 <?php
 
-Route::get('home', function () {
-    return view('pgInicial');
+Route::get('/', function () {
+  return view('pgInicial');
 });
 
 Route::get('blog', 'pgBlogController@index');
 
-Route::get('menu', function () {
-    return view('layout.menuInicial');
-});
-
 Route::resource('post', 'pgBlogController');
 
+Auth::routes();
+
+Route::group(['middleware' => ['web','auth']], function(){
+//  Route::get('/', function () {
+//      return view('welcome');
+//  });
+
+  Route::get('/home', function() {
+    if (Auth::user()->admin == 0) {
+      return view('userHome');
+    } else {
+      
+      return view('adminHome');
+    }
+  });
+});

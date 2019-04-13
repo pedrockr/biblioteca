@@ -32,12 +32,12 @@
                 </div>   
 
                 <div class="navbar-end">
-                    <a class="navbar-item is-active" href="home">Home</a>
+                    <a class="navbar-item is-active" href="/biblioteca/public">Home</a>
                     <a class="navbar-item is-active" href="blog">Blog</a>
                     <a class="navbar-item is-active" href="#">Buscar no Acervo</a>
 
                     <div class="navbar-item">
-                        <a class="button is-link" href="#">Entrar</a>
+                        <a class="button is-link" href="login">Entrar</a>
                     </div>
                 </div>
             </div>

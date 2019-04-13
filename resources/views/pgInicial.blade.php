@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    @include('layout.menuInicial')
+    @include('layouts.menuInicial')
 
 
     <section class="hero is-info is-fullheight-with-navbar">
