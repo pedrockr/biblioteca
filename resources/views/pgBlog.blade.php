@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    @include('layout.menuInicial')
+    @include('layouts.menuInicial')
     
     <div class="hero is-light is-fullheight">
     <section class="section">
@@ -32,8 +32,8 @@
                         <div class="column is-10">
                             <p class="title article-title">{{$posts->blogPost_titulo}}</p>
                             <div class="tags has-addons">
-                                    <span class="tag is-rounded is-info">@skeetskeet</span>
-                                    <span class="tag is-rounded">May 10, 2018</span>
+                                    <span class="tag is-rounded is-info">{{$posts->blogPost_autor}}</span>
+                                    <span class="tag is-rounded">{{$posts->blogPost_data}}</span>
                             </div>
 
                             <div class="content article-body">

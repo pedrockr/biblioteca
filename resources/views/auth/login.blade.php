@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <section class="hero is-primary">
+<!--
+    <section class="hero is-link">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
@@ -18,8 +18,15 @@
                 <header class="card-header">
                     <p class="card-header-title">Login</p>
                 </header>
+-->
+<section class="hero is-light is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title has-text-grey">Login</h3>
+                <p class="subtitle has-text-grey">Please login to proceed.</p>
+                <div class="box">
 
-                <div class="card-content">
                     <form class="login-form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -89,16 +96,15 @@
                                     </div>
 
                                     <div class="control">
-                                        <a href="{{ route('password.request') }}">
-                                            Forgot Your Password?
-                                        </a>
+                                        <a href="{{ route('password.request') }}">Forgot Your Password?</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
+                  </div>
+             </div>
+         </div>
+     </div>
+</section>
 @endsection
