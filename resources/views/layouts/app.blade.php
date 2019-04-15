@@ -10,15 +10,19 @@
 
         <title>{{ config('app.name', 'Laravel') }} {{ app()->version() }}</title>
 
+
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
+
         <div id="app">
             <nav class="navbar has-shadow">
                 <div class="container">
                     <div class="navbar-brand">
                         <a href="{{ url('/') }}" class="navbar-item">{{ config('app.name', 'Laravel') }}</a>
+                        <p>{{ Config::get('siteVars.supportEmail') }}</p>
+                        {{ $post[0]->blogPost_titulo }}
 
                         <div class="navbar-burger burger" data-target="navMenu">
                             <span></span>

@@ -99,6 +99,20 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label">
+                                <label class="label">Admin</label>
+                            </div>
+
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" id="admin" type="admin"
+                                               name="admin" value="0"required>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="field is-horizontal">
                             <div class="field-label"></div>

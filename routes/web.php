@@ -4,6 +4,10 @@ Route::get('/', function () {
   return view('pgInicial');
 });
 
+Route::get('reg', function () {
+  return view('auth.register');
+});
+
 Route::get('blog', 'pgBlogController@index');
 
 Route::resource('post', 'pgBlogController');
