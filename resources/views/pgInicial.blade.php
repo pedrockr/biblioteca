@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Document</title>
+    <title>{{ $config[0] -> NavBrand }}</title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -19,8 +19,8 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="content is-large">
-                <h1 class="title">biblioteca</h1>
-                <h2 class="subtitle">biblioteca</h2>
+                <h1 class="title">{{ $config[0]->tituloPgInicial }}</h1>
+                <h2 class="subtitle">{{ $config[0]->subtituloPgInicial }}</h2>
                 </div>
             </div>
         </div>

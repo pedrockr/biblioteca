@@ -1,17 +1,22 @@
 <?php
 
+
+//Rota para a pagina inicial
 Route::get('/', function () {
   return view('pgInicial');
 });
-
-Route::get('reg', function () {
-  return view('auth.register');
-});
-
+//Rota para acessar o blog
 Route::get('blog', 'pgBlogController@index');
+//Rota para acessar a pagina de busca
+Route::get('buscar', 'pgBuscaController@index');
+Route::post('buscar/buscaLivro', 'pgBuscaController@buscar');
 
+//Rotas para variaveis em Controller
 Route::resource('post', 'pgBlogController');
+Route::resource('busca', 'pgBuscaController');
 
+
+//Rotas que necessitam autenticação
 Auth::routes();
 
 Route::group(['middleware' => ['web','auth']], function(){

@@ -15,8 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $post = DB::table('blog_posts')->get();
-        View::share('post', $post);
+        //$post = DB::table('blog_posts')->get();
+        //View::share('post', $post);
     }
 
     /**
@@ -26,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $config = DB::table('Configuracoes')->get();
+        View::share('config', $config);
         
     }
 }
