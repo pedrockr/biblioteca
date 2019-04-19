@@ -14,12 +14,10 @@
         <div class="container">
             <div class="navbar-menu">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="../">
-                        <img src="img/logo.jpg" width="50" height="40">
-                    </a>
+
                     <div class="navbar-item ">
                         <div class="content is-large">
-                            <p class="">{{ $config[0]->NavBrand }}</p>
+                            <p class="title is-2">{{ $config[0]->NavBrand }}</p>
                         </div>
                     </div>
                     <div class="navbar-burger burger" data-target="topNav">
