@@ -9,7 +9,7 @@ Route::get('/', function () {
 Route::get('blog', 'pgBlogController@index');
 //Rota para acessar a pagina de busca
 Route::get('buscar', 'pgBuscaController@index');
-Route::post('buscar/buscaLivro', 'pgBuscaController@buscar');
+Route::post('buscaLivro', 'pgBuscaController@buscar');
 
 //Rotas para variaveis em Controller
 Route::resource('post', 'pgBlogController');
