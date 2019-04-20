@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="{{ app()->getLocale() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>admin homepage</title>
@@ -20,7 +20,7 @@
             <br>
             <p class="menu-label ">Página Inicial</p>
             <ul class="menu-list ">
-                <li><a>Customização</a></li>
+                <li><a href="adminHome/config">Customização</a></li>
             </ul>
 
             <p class="menu-label">Blog</p>

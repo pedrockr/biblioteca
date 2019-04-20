@@ -12,26 +12,23 @@
         
     </head>
     <body>
-<nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="container">
-            <div class="navbar-menu">
-                <div class="navbar-brand">
 
-                    <div class="navbar-item ">
-                        <div class="content is-large">
-                            <p class="title is-2">{{ $config[0]->NavBrand }}</p>
+        <div id="app">
+            <nav class="navbar has-shadow">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href="{{ url('/') }}" class="navbar-item">{{ $config[0]->NavBrand }}</a>    
+                        <div class="navbar-burger burger" data-target="navMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
                     </div>
-                    <div class="navbar-burger burger" data-target="topNav">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>   
 
-                <div class="navbar-end">
-                    <div class="navbar-end">
-                        <a class="navbar-item is-active" href="/biblioteca/public" target="_blank">Visualizar Site</a>
+                    <div class="navbar-menu" id="navMenu">
+                        <div class="navbar-start"></div>
+
+                        <div class="navbar-end">
                             @if (Auth::guest())
                                 <a class="navbar-item " href="{{ route('login') }}">Login</a>
 
@@ -40,7 +37,6 @@
                                     <a class="navbar-link" href="#">{{ Auth::user()->name }}</a>
 
                                     <div class="navbar-dropdown">
-
                                         <a class="navbar-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                             Logout
@@ -54,9 +50,11 @@
                                 </div>
                             @endif
                         </div>
+                    </div>
                 </div>
-            </div>
+            </nav>
+            @yield('content')
         </div>
-    </nav>
+
     </body>
 </html>
