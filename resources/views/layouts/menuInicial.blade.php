@@ -29,7 +29,7 @@
 
                 <div class="navbar-end">
                     <a class="navbar-item is-active" href="/biblioteca/public">Home</a>
-                    <a class="navbar-item is-active" href="blog">Blog</a>
+                    <a class="navbar-item is-active" href="blogView">Blog</a>
                     <a class="navbar-item is-active" href="buscar">Buscar no Acervo</a>
 
                     <div class="navbar-item">

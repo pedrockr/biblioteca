@@ -17,13 +17,13 @@
             <br>
             <p class="menu-label ">Página Inicial</p>
             <ul class="menu-list ">
-                <li><a class="button-hover-color"href="home_customizar">Customização</a></li>
+                <li><a class="button-hover-color"href="/biblioteca/public/home_customizar">Customização</a></li>
             </ul>
 
             <p class="menu-label">Blog</p>
             <ul class="menu-list ">
-                <li><a href="blog_post">Criar Conteudo</a></li>
-                <li><a href="adminHome/blog_customizar">Customização da pagina</a></li>
+                <li><a href="/biblioteca/public/blog/create">Criar Conteudo</a></li>
+                <li><a href="/biblioteca/public/blog">Editar Conteudo</a></li>
             </ul>
 
             <p class="menu-label">Cadastro</p>

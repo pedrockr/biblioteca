@@ -59,14 +59,24 @@
 
                             <label class="label">ativaBlog</label>
                             <input type="hidden" name="ativaBlog" value="{{ $config[0]->ativaBlog }}">
-                            <input type="radio" name="ativaBusca" value="1"/> Sim<br />
-                            <input type="radio" name="ativaBusca" value="0"/> Não<br />                            
+                            <input type="radio" name="ativaBlog" value="1"/> Sim<br />
+                            <input type="radio" name="ativaBlog" value="0"/> Não<br />
+                            @if($config[0]->ativaBlog == 1)
+                            <label>O blog ativo</label>
+                            @else
+                            <label>O Blog desativado</label>
+                            @endif                            
 
                             <label class="label">ativaBusca</label>
                             <input type="hidden" name="ativaBusca" value="{{ $config[0]->ativaBusca }}">
 
                             <input type="radio" name="ativaBusca" value="1"/> Sim<br />
                             <input type="radio" name="ativaBusca" value="0"/> Não<br />
+                            @if($config[0]->ativaBusca == 1)
+                            <label>A busca ativa</label>
+                            @else
+                            <label>A busca desativada</label>
+                            @endif
 
                             <label class="label">CorCaracter</label>
                             <input type="hidden" name="CorCaracter" value="{{ $config[0]->CorCaracter }}">
