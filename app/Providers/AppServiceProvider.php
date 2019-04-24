@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $config = DB::table('Configuracoes')->get();
+        $config = DB::table('settings')->get();
         View::share('config', $config);
         
     }

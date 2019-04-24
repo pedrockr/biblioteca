@@ -1,55 +1,38 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="{{ app()->getLocale() }}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>admin homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Administrador</title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
 </head>
-
 <body>
+    @include('layouts.app')
+    
+    <div class="hero is-fullheight is-light ">
+    <section class="section">
+        <div class="container">
+               <div class="columns">
+                   <div class="column is-2">
+                       @include('admin.asideAdmin')
 
-@include('layouts.app')
+                   </div>                                       
 
-<div class="columns is-fullheight">
-    <div class="column is-2 is-sidebar-menu is-hidden-mobile">
-        <aside class="menu is-hidden-mobile ">
-            <br>
-            <p class="menu-label ">Página Inicial</p>
-            <ul class="menu-list ">
-                <li><a href="adminHome/config">Customização</a></li>
-            </ul>
-
-            <p class="menu-label">Blog</p>
-            <ul class="menu-list ">
-                <li><a>Criar Conteudo</a></li>
-                <li><a>Customização da pagina</a></li>
-            </ul>
-
-            <p class="menu-label">Cadastro</p>
-            <ul class="menu-list ">
-                <li><a>Cadastrar Usuario/Admin</a></li>
-                <li><a>Cadastro Autores</a></li>
-            </ul>
-
-        </aside>
+                   <div class="column is-10">                        
+                       <div class="box">
+                       @include('admin.home')
+                       </div>                         
+                   </div>                    
+               </div>            
+        </div>
+            
+    </section>
     </div>
-
-    <div class="column is-main-content">
-        Main content
-    </div>
-</div>
-
-
-
-
-
-
-
-<script async type="text/javascript" src="../js/bulma.js"></script>
+    
 </body>
-
 </html>

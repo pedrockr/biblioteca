@@ -20,6 +20,7 @@ Route::resource('busca', 'pgBuscaController');
 Auth::routes();
 
 Route::group(['middleware' => ['web','auth']], function(){
+	
   Route::get('/home', function() {
     if (Auth::user()->admin == 0) {
       return view('userHome');

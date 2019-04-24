@@ -5,7 +5,7 @@
     <meta charset="{{ app()->getLocale() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>User homepage</title>
+    <title>{{ $config[0] -> NavBrand }}</title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>

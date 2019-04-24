@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>Document</title>
+    <title>{{ $config[0] -> NavBrand }}</title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <style>
+
+    .has-cor-fundo{
+        background-color: {{ $config[0] -> corBusca }};
+    }
 
 </style>
 
@@ -16,7 +20,7 @@
 <body>
     @include('layouts.menuInicial')
     
-    <div class="hero {{ $config[0] -> corBusca }} is-fullheight">
+    <div class="hero has-cor-fundo is-fullheight">
     <section class="section">
         <div class="container">
                 <div class="columns">

@@ -16,7 +16,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-        }   
+        } 
     </style>
 
 </head>
@@ -25,12 +25,12 @@
     @include('layouts.menuInicial')
 
 
-    <section class="hero {{$config[0]->corHero}} is-fullheight-with-navbar has-bg-img">
+    <section class="hero backColor is-fullheight-with-navbar has-bg-img">
         <div class="hero-body ">
             <div class="container has-text-centered">
                 <div class="content is-large">
-                <h1 class="title">{{ $config[0]->tituloPgInicial }}</h1>
-                <h2 class="subtitle">{{ $config[0]->subtituloPgInicial }}</h2>
+                <h1 class="title {{ 'has-text-' . $config[0]->CorCaracter }}">{{ $config[0]->tituloPgInicial }}</h1>
+                <h2 class="subtitle {{ 'has-text-' . $config[0]->CorCaracter }}" >{{ $config[0]->subtituloPgInicial }}</h2>
                 </div>
             </div>
         </div>
