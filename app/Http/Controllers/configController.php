@@ -43,7 +43,7 @@ class configController extends Controller
       $aparencia->corBusca =             $request->get('corBusca');
 
         $aparencia->save();
-        return redirect('/aparencia');;
+        return redirect('/aparencia/1/edit');;
     }
     public function destroy($id)
     {

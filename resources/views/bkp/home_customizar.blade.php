@@ -100,6 +100,12 @@
                                 <option value="beige">Bege</option>
                             </select>                            
 
+                            <div class="control">
+                              <label class="radio">
+                                <input type="radio" name="ativaBuscar" value="1">Yes</label>
+                              <label class="radio">
+                                <input type="radio" name="ativaBuscar" value="0">No</label>
+                            </div>
 
 
 

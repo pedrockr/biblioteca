@@ -17,18 +17,24 @@
             <br>
             <p class="menu-label ">Página Inicial</p>
             <ul class="menu-list ">
-                <li><a class="button-hover-color"href="/biblioteca/public/aparencia">Customização</a></li>
+                <li><a class="button-hover-color"href="/biblioteca/public/aparencia/1/edit">Customização</a></li>
             </ul>
 
             <p class="menu-label">Blog</p>
             <ul class="menu-list ">
-                <li><a href="/biblioteca/public/blog/create">Criar Conteudo</a></li>
+                <!--<li><a href="/biblioteca/public/blog/create">Criar Conteudo</a></li>-->
                 <li><a href="/biblioteca/public/blog">Editar Conteudo</a></li>
             </ul>
 
             <p class="menu-label">Cadastro</p>
             <ul class="menu-list ">
                 <li><a href="/biblioteca/public/usuario">Cadastrar Usuario/Admin</a></li>
+                
+            </ul>
+
+            <p class="menu-label">Painel Usuario</p>
+            <ul class="menu-list ">
+                <li><a href="#">Acessar painel usuario</a></li>
                 
             </ul>
 
