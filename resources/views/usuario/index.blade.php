@@ -19,26 +19,29 @@
             <div class="container">
                 <div class="columns">
                     <div class="column is-2">
-                        @include('admin.asideAdmin')
+                        @include('layouts.asideAdmin')
                     </div>                                       
 
                     <div class="column is-10">
                         <div class="box">
-                            <form action="{{route('configUpdate.update', $config[0]->id)}}" method="post">
-            				@csrf
-            				@method('PUT')
+                           @foreach($usuario as $usuario)
+                           {{$usuario -> id}}<br>
+                           {{$usuario -> name}}<br>
+                           {{$usuario -> email}}<br>
+                           {{$usuario -> admin}}
+                      
+                                        <td>
+                                            <form action="{{ route('usuario.destroy', $usuario->id)}}" method="post">
+                                              @csrf
+                                              @method('DELETE')
+                                              <button class="button" type="submit">Delete</button>
+                                            </form>
 
-                            
+                           @endforeach
+
+                           <a href="/biblioteca/public/usuario/create" class="button">Cadastrar</a>
 
 
-
-                            <button type="input">Atualizar</button>                                                                                    
-
-
-
-
-                           		
-                           	</form>
                         </div>                         
                     </div>                    
                 </div>            

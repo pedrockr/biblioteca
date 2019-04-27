@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="columns">
                     <div class="column is-2">
-                        @include('admin.asideAdmin')
+                        @include('layouts.asideAdmin')
                     </div>                                       
 
                     <div class="column is-10">

@@ -5,38 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>criar</title>
+    <title>Document</title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
 </head>
 <body>
-
-    @include('layouts.app')  
-  
+    @include('layouts.app')    
     <div class="hero is-fullheight is-light ">
         <section class="section">
             <div class="container">
                 <div class="columns">
                     <div class="column is-2">
-                       
                         @include('layouts.asideAdmin')
                     </div>                                       
 
                     <div class="column is-10">
                         <div class="box">
 
-                            <form method="post" action="{{ route('blog.update', $blog->id) }}">
-                                @method('PATCH')
-                                @csrf
-                            <input type="text" name="blogPost_titulo" value="{{ $blog->blogPost_titulo }}">
-                            <input type="text" name="blogPost_msg" value="{{ $blog->blogPost_msg }}">
-                            <input type="text" name="blogPost_autor" value="{{ $blog->blogPost_autor }}">
-                            <input type="text" name="blogPost_data" value="{{ $blog->blogPost_data }}">
-
-                            <button type="input">Atualizar</button>
+                            @foreach($aparencia as $aparencia)
+                            {{$aparencia -> tituloPgInicial}}<br>
+                            {{$aparencia -> subtituloPgInicial}}<br>
                             
+                            {{$aparencia -> imgHero}}<br>
+                            {{$aparencia -> NavBrand}}<br>
+                            {{$aparencia -> ativaBlog}}<br>
+                            {{$aparencia -> ativaBusca}}<br>
+                            {{$aparencia -> CorCaracter}}<br>
+                            {{$aparencia -> corBusca}}
+
+
+                            <a href="{{ route('aparencia.edit', $aparencia->id)}}" class="button">Edit</a>
+
+                            @endforeach  
+                                                                                    
+
+
+
+
+                           		
                            	</form>
                         </div>                         
                     </div>                    

@@ -9,8 +9,8 @@ class configController extends Controller
 {
     public function index()
     {
-        $configUpdate = setting::all();
-        return view ('admin.home_customizar', compact('configUpdate'));
+        $aparencia = setting::all();
+        return view ('aparencia.index', compact('aparencia'));
     }
     public function create()
     {
@@ -26,24 +26,24 @@ class configController extends Controller
     }
     public function edit($id)
     {
-        $configUpdate = setting::find($id);
-        return view('admin.home_customizar', compact('configUpdate'));
+        $aparencia = setting::find($id);
+        return view('aparencia.edit', compact('aparencia'));
     }
     public function update(Request $request, $id)
     {
-      $configUpdate = setting::find($id);
-      $configUpdate->tituloPgInicial =      $request->get('tituloPgInicial');
-      $configUpdate->subtituloPgInicial =   $request->get('subtituloPgInicial');
+      $aparencia = setting::find($id);
+      $aparencia->tituloPgInicial =      $request->get('tituloPgInicial');
+      $aparencia->subtituloPgInicial =   $request->get('subtituloPgInicial');
       //$configUpdate->corHero =              $request->get('corHero');
-      $configUpdate->imgHero =              $request->get('imgHero');
-      $configUpdate->NavBrand =             $request->get('NavBrand');
-      $configUpdate->ativaBlog =             $request->get('ativaBlog');
-      $configUpdate->ativaBusca =             $request->get('ativaBusca');
-      $configUpdate->CorCaracter =             $request->get('CorCaracter');
-      $configUpdate->corBusca =             $request->get('corBusca');
+      $aparencia->imgHero =              $request->get('imgHero');
+      $aparencia->NavBrand =             $request->get('NavBrand');
+      $aparencia->ativaBlog =             $request->get('ativaBlog');
+      $aparencia->ativaBusca =             $request->get('ativaBusca');
+      $aparencia->CorCaracter =             $request->get('CorCaracter');
+      $aparencia->corBusca =             $request->get('corBusca');
 
-        $configUpdate->save();
-        return redirect()->route('home_customizar')->with('success','atualizado');
+        $aparencia->save();
+        return redirect('/aparencia');;
     }
     public function destroy($id)
     {

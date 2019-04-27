@@ -18,14 +18,14 @@
             <div class="container">
                 <div class="columns">
                     <div class="column is-2">
-                        @include('admin.asideAdmin')
+                        @include('layouts.asideAdmin')
                     </div>                                       
 
                     <div class="column is-10">
                         <div class="box">
-                            <form action="{{route('configUpdate.update', $config[0]->id)}}" method="post">
-            				@csrf
-            				@method('PUT')
+                            <form action="{{ route('aparencia.update', $aparencia->id) }}" method="post">
+                                @method('PATCH')
+                                @csrf
 
                             <label class="label">tituloPgInicial</label>
                        		<input type="text" name="tituloPgInicial" value="{{ $config[0]->tituloPgInicial }}">

@@ -1,61 +1,38 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="{{ app()->getLocale() }}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $config[0] -> NavBrand }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Administrador</title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
 </head>
-
 <body>
+    @include('layouts.app')
+    
+    <div class="hero is-fullheight is-light ">
+    <section class="section">
+        <div class="container">
+               <div class="columns">
+                   <div class="column is-2">
+                       @include('layouts.asideUser')
 
-@include('layouts.app')
+                   </div>                                       
 
-<div class="columns is-fullheight">    
-    <div class="column is-2 is-sidebar-menu is-hidden-mobile">
-        <aside class="menu is-hidden-mobile">
-            <p class="menu-label">
-                General
-            </p>
-            <ul class="menu-list ">
-                <li><a class="">Buscar Livros</a></li>
-                <li><a>Emprestar</a></li>           
-                <li><a>Cadastrar Clientes</a></li>
-                <ul class="menu-list">
-                    <li>
-                        <a>Cadastro no Acervo</a>
-                        <ul>
-                            <li><a>Livros</a></li>
-                            <li><a>Autores</a></li>
-                            <li><a>Generos</a></li>
-                            <li><a>Editora</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="menu-list">
-                    <li>
-                        <a>Consulta Clientes</a>
-                        <ul>
-                            <li><a>Livros Emprestados</a></li>
-                            <li><a>Livros em Atrazo</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </ul>
-        </aside>
+                   <div class="column is-10">                        
+                       <div class="box">
+                        modulo
+                       </div>                         
+                   </div>                    
+               </div>            
+        </div>
+            
+    </section>
     </div>
-
-    <div class="column is-main-content">
-        Main content
-    </div>
-</div>
-
-
-<script async type="text/javascript" src="../js/bulma.js"></script>
+    
 </body>
-
 </html>

@@ -1,10 +1,9 @@
 <?php
-
-
 //Rota para a pagina inicial
 Route::get('/', function () {
   return view('pgInicial');
 });
+
 //Rota para acessar o blog
 Route::get('blogView', 'pgBlogController@index');
 //Rota para acessar a pagina de busca
@@ -15,7 +14,9 @@ Route::post('buscaLivro', 'pgBuscaController@buscar');
 Route::resource('post', 'pgBlogController');
 Route::resource('busca', 'pgBuscaController');
 
-
+Route::get('register', function(){
+  return view ('auth.register');
+});
 
 //Rotas que necessitam autenticação
 Auth::routes();
@@ -33,18 +34,10 @@ Route::group(['middleware' => ['web','auth']], function(){
   });
 
 
-    Route::get('home_customizar', function () {
-        
-        if(Auth::user()->admin == 1)
-        return view('admin.home_customizar');
-    })->name('home_customizar');
 
-Route::resource('configUpdate', 'configController');
+Route::resource('aparencia', 'configController')->middleware('admin');
+Route::resource('usuario', 'usuarioController')->middleware('admin');
 Route::resource('blog', 'blogController');
-
-
-
-
 
 
 });

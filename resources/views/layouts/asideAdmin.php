@@ -17,7 +17,7 @@
             <br>
             <p class="menu-label ">Página Inicial</p>
             <ul class="menu-list ">
-                <li><a class="button-hover-color"href="/biblioteca/public/home_customizar">Customização</a></li>
+                <li><a class="button-hover-color"href="/biblioteca/public/aparencia">Customização</a></li>
             </ul>
 
             <p class="menu-label">Blog</p>
@@ -28,8 +28,8 @@
 
             <p class="menu-label">Cadastro</p>
             <ul class="menu-list ">
-                <li><a>Cadastrar Usuario/Admin</a></li>
-                <li><a>Cadastro Autores</a></li>
+                <li><a href="/biblioteca/public/usuario">Cadastrar Usuario/Admin</a></li>
+                
             </ul>
 
         </aside>

@@ -19,13 +19,13 @@
         <div class="container">
                <div class="columns">
                    <div class="column is-2">
-                       @include('admin.asideAdmin')
+                       @include('layouts.asideAdmin')
 
                    </div>                                       
 
                    <div class="column is-10">                        
                        <div class="box">
-                       @include('admin.home')
+                       conteudo
                        </div>                         
                    </div>                    
                </div>            
