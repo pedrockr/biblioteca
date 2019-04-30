@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 25, 2019 at 02:54 AM
+-- Generation Time: Apr 30, 2019 at 02:20 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -71,7 +71,6 @@ CREATE TABLE `blog_posts` (
 --
 
 INSERT INTO `blog_posts` (`id`, `blogPost_titulo`, `blogPost_msg`, `blogPost_autor`, `blogPost_data`, `updated_at`, `created_at`) VALUES
-(1, 'teste postagem 3', 'mensagem de teste 1', 'joao', '2019-04-02', '2019-04-24', '0000-00-00'),
 (2, 'teste3', 'este eh um teste', 'joao', '2019-04-24', '2019-04-24', '2019-04-24'),
 (4, 'teste2', 'este eh um teste', 'joao', '2019-04-24', '2019-04-24', '2019-04-24'),
 (5, 'teste2', 'este eh um teste', 'joao', '2019-04-24', '2019-04-24', '2019-04-24'),
@@ -85,7 +84,7 @@ INSERT INTO `blog_posts` (`id`, `blogPost_titulo`, `blogPost_msg`, `blogPost_aut
 --
 
 CREATE TABLE `cadastro_livros` (
-  `id_livros` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nome_livros` varchar(100) NOT NULL,
   `isbn_livros` varchar(30) NOT NULL,
   `edicao_livros` varchar(50) NOT NULL,
@@ -100,7 +99,7 @@ CREATE TABLE `cadastro_livros` (
 -- Dumping data for table `cadastro_livros`
 --
 
-INSERT INTO `cadastro_livros` (`id_livros`, `nome_livros`, `isbn_livros`, `edicao_livros`, `qtd_livros`, `fk_livros_autor`, `fk_livros_editora`, `fk_livros_genero`, `fk_livros_prateleira`) VALUES
+INSERT INTO `cadastro_livros` (`id`, `nome_livros`, `isbn_livros`, `edicao_livros`, `qtd_livros`, `fk_livros_autor`, `fk_livros_editora`, `fk_livros_genero`, `fk_livros_prateleira`) VALUES
 (2, 'Inferno', '9789722526449', '2 edicao', 2, 1, 2, 5, 1),
 (3, 'O codigo Da Vinci', '0385504209', '3 edicao', 3, 1, 3, 5, 1),
 (4, 'Harry Potter e a Pedra Filosofal', '0747532699', '1 edicao', 2, 2, 4, 3, 2),
@@ -129,7 +128,7 @@ INSERT INTO `cadastro_livros` (`id_livros`, `nome_livros`, `isbn_livros`, `edica
 --
 
 CREATE TABLE `clientes` (
-  `id_clientes` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nome_clientes` varchar(50) NOT NULL,
   `endereco_clientes` varchar(50) NOT NULL,
   `celular_clientes` int(20) DEFAULT NULL,
@@ -141,7 +140,7 @@ CREATE TABLE `clientes` (
 -- Dumping data for table `clientes`
 --
 
-INSERT INTO `clientes` (`id_clientes`, `nome_clientes`, `endereco_clientes`, `celular_clientes`, `cpf_clientes`, `telefone_clientes`) VALUES
+INSERT INTO `clientes` (`id`, `nome_clientes`, `endereco_clientes`, `celular_clientes`, `cpf_clientes`, `telefone_clientes`) VALUES
 (21, 'Joao de Oliveira', 'Rua do Eixo, 200', 991236274, '12345678901', 23457564),
 (22, 'Jose dos Santos', 'Djalma Correia, 250', 991236276, '12345678902', 23457594),
 (23, 'Paulo Correia', 'Ru Vinte, 124', 991236271, '12345678903', 23457599),
@@ -188,11 +187,23 @@ INSERT INTO `editoras` (`id_editoras`, `nome_editoras`) VALUES
 --
 
 CREATE TABLE `emprestimos` (
-  `id_livros` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `fk_emprestimo_clientes` int(11) NOT NULL,
   `fk_emprestimo_livros` int(11) NOT NULL,
-  `fk_emprestimo_users` int(11) NOT NULL
+  `fk_emprestimo_users` int(11) NOT NULL,
+  `data_emprestimo` date NOT NULL,
+  `data_devolucao` date NOT NULL,
+  `data_devolvido` date DEFAULT NULL,
+  `updated_at` date NOT NULL,
+  `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `emprestimos`
+--
+
+INSERT INTO `emprestimos` (`id`, `fk_emprestimo_clientes`, `fk_emprestimo_livros`, `fk_emprestimo_users`, `data_emprestimo`, `data_devolucao`, `data_devolvido`, `updated_at`, `created_at`) VALUES
+(7, 27, 14, 8, '2019-04-17', '2019-05-01', '2019-04-09', '2019-04-29', '2019-04-29');
 
 -- --------------------------------------------------------
 
@@ -301,6 +312,26 @@ INSERT INTO `prateleiras` (`id_prateleira`, `identificador_prateleira`, `descric
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `qtdClientes`
+-- (See below for the actual view)
+--
+CREATE TABLE `qtdClientes` (
+`qtdClientes` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `qtdLivros`
+-- (See below for the actual view)
+--
+CREATE TABLE `qtdLivros` (
+`qtd` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `settings`
 --
 
@@ -323,7 +354,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `tituloPgInicial`, `subtituloPgInicial`, `corHero`, `imgHero`, `NavBrand`, `updated_at`, `ativaBlog`, `ativaBusca`, `CorCaracter`, `corBusca`) VALUES
-(1, 'DougPress Library', 'esta eh uma mensagem de teste', 'lightyellow', 'book1', 'DougPress', '2019-04-24', 1, 1, 'white', 'beige');
+(1, 'DougPress Library', 'CMS para gerenciamento de bibliotecas', 'lightyellow', 'book2', 'DougPress', '2019-04-29', 1, 1, 'white', 'lightcyan');
 
 -- --------------------------------------------------------
 
@@ -353,11 +384,58 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `v_emprestimos`
+-- (See below for the actual view)
+--
+CREATE TABLE `v_emprestimos` (
+`id` int(11)
+,`nome_livros` varchar(100)
+,`isbn_livros` varchar(30)
+,`edicao_livros` varchar(50)
+,`qtd_livros` int(50)
+,`nome_clientes` varchar(50)
+,`cpf_clientes` varchar(11)
+,`data_emprestimo` date
+,`data_devolucao` date
+,`data_devolvido` date
+,`name` varchar(255)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `livros`
 --
 DROP TABLE IF EXISTS `livros`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `livros`  AS  select `a`.`nome_livros` AS `nome_livros`,`a`.`isbn_livros` AS `isbn_livros`,`a`.`edicao_livros` AS `edicao_livros`,`a`.`qtd_livros` AS `qtd_livros`,`b`.`nome_autores` AS `nome_autores`,`b`.`img_autores` AS `img_autores`,`c`.`nome_editoras` AS `nome_editoras`,`d`.`nome_generos` AS `nome_generos`,`f`.`identificador_prateleira` AS `identificador_prateleira`,`f`.`descricao_prateleira` AS `descricao_prateleira` from ((((`cadastro_livros` `a` left join `autores` `b` on((`a`.`fk_livros_autor` = `b`.`id_autores`))) left join `editoras` `c` on((`a`.`fk_livros_editora` = `c`.`id_editoras`))) left join `generos` `d` on((`a`.`fk_livros_genero` = `d`.`id_generos`))) left join `prateleiras` `f` on((`a`.`fk_livros_prateleira` = `f`.`id_prateleira`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `qtdClientes`
+--
+DROP TABLE IF EXISTS `qtdClientes`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `qtdClientes`  AS  select count(`clientes`.`nome_clientes`) AS `qtdClientes` from `clientes` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `qtdLivros`
+--
+DROP TABLE IF EXISTS `qtdLivros`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `qtdLivros`  AS  select count(`cadastro_livros`.`nome_livros`) AS `qtd` from `cadastro_livros` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `v_emprestimos`
+--
+DROP TABLE IF EXISTS `v_emprestimos`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_emprestimos`  AS  select `a`.`id` AS `id`,`c`.`nome_livros` AS `nome_livros`,`c`.`isbn_livros` AS `isbn_livros`,`c`.`edicao_livros` AS `edicao_livros`,`c`.`qtd_livros` AS `qtd_livros`,`b`.`nome_clientes` AS `nome_clientes`,`b`.`cpf_clientes` AS `cpf_clientes`,`a`.`data_emprestimo` AS `data_emprestimo`,`a`.`data_devolucao` AS `data_devolucao`,`a`.`data_devolvido` AS `data_devolvido`,`d`.`name` AS `name` from (((`emprestimos` `a` left join `clientes` `b` on((`a`.`fk_emprestimo_clientes` = `b`.`id`))) left join `cadastro_livros` `c` on((`a`.`fk_emprestimo_livros` = `c`.`id`))) left join `users` `d` on((`a`.`fk_emprestimo_users` = `d`.`id`))) ;
 
 --
 -- Indexes for dumped tables
@@ -379,7 +457,7 @@ ALTER TABLE `blog_posts`
 -- Indexes for table `cadastro_livros`
 --
 ALTER TABLE `cadastro_livros`
-  ADD PRIMARY KEY (`id_livros`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `fk_livros_autor` (`fk_livros_autor`),
   ADD KEY `fk_livros_editora` (`fk_livros_editora`),
   ADD KEY `fk_livros_genero` (`fk_livros_genero`),
@@ -389,7 +467,7 @@ ALTER TABLE `cadastro_livros`
 -- Indexes for table `clientes`
 --
 ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`id_clientes`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `editoras`
@@ -401,7 +479,7 @@ ALTER TABLE `editoras`
 -- Indexes for table `emprestimos`
 --
 ALTER TABLE `emprestimos`
-  ADD PRIMARY KEY (`id_livros`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `fk_emprestimo_users` (`fk_emprestimo_users`),
   ADD KEY `fk_emprestimo_livros` (`fk_emprestimo_livros`),
   ADD KEY `fk_emprestimo_clientes` (`fk_emprestimo_clientes`);
@@ -463,13 +541,13 @@ ALTER TABLE `blog_posts`
 -- AUTO_INCREMENT for table `cadastro_livros`
 --
 ALTER TABLE `cadastro_livros`
-  MODIFY `id_livros` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_clientes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `editoras`
@@ -481,7 +559,7 @@ ALTER TABLE `editoras`
 -- AUTO_INCREMENT for table `emprestimos`
 --
 ALTER TABLE `emprestimos`
-  MODIFY `id_livros` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `generos`
@@ -525,8 +603,8 @@ ALTER TABLE `cadastro_livros`
 --
 ALTER TABLE `emprestimos`
   ADD CONSTRAINT `emprestimos_ibfk_1` FOREIGN KEY (`fk_emprestimo_users`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `emprestimos_ibfk_2` FOREIGN KEY (`fk_emprestimo_livros`) REFERENCES `cadastro_livros` (`id_livros`),
-  ADD CONSTRAINT `emprestimos_ibfk_3` FOREIGN KEY (`fk_emprestimo_clientes`) REFERENCES `clientes` (`id_clientes`);
+  ADD CONSTRAINT `emprestimos_ibfk_2` FOREIGN KEY (`fk_emprestimo_livros`) REFERENCES `cadastro_livros` (`id`),
+  ADD CONSTRAINT `emprestimos_ibfk_3` FOREIGN KEY (`fk_emprestimo_clientes`) REFERENCES `clientes` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
