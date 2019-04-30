@@ -28,6 +28,12 @@ class AppServiceProvider extends ServiceProvider
     {
         $config = DB::table('settings')->get();
         View::share('config', $config);
+
+        $qtdLivros = DB::table('qtdLivros')->get();
+        View::share('qtdLivros', $qtdLivros);
+
+        $qtdClientes = DB::table('qtdClientes')->get();
+        View::share('qtdClientes', $qtdClientes);
         
     }
 }

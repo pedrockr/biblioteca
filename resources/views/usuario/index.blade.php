@@ -82,7 +82,7 @@
                                       <div class="control">
                                         <label class="radio">
                                           <input type="radio" name="admin" value="1">
-                                          Adninistrador
+                                          Administrador
                                         </label>
                                         <label class="radio">
                                           <input type="radio" name="admin" value="0" checked="">

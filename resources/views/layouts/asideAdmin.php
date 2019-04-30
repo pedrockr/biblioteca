@@ -34,7 +34,7 @@
 
             <p class="menu-label">Painel Usuario</p>
             <ul class="menu-list ">
-                <li><a href="#">Acessar painel usuario</a></li>
+                <li><a href="/biblioteca/public/userHome">Acessar painel usuario</a></li>
                 
             </ul>
 

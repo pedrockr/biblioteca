@@ -29,8 +29,14 @@
 
                 <div class="navbar-end">
                     <a class="navbar-item is-active" href="/biblioteca/public">Home</a>
+
+                    @if($config[0]->ativaBlog == 1)
                     <a class="navbar-item is-active" href="blogView">Blog</a>
+                    @endif
+
+                    @if($config[0]->ativaBlog == 1)
                     <a class="navbar-item is-active" href="buscar">Buscar no Acervo</a>
+                    @endif
 
                     <div class="navbar-item">
                         <a class="button is-link" href="login">Entrar</a>

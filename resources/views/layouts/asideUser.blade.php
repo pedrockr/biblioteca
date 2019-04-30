@@ -18,15 +18,17 @@
                 General
             </p>
             <ul class="menu-list ">
-                <li><a class="">Buscar Livros</a></li>
-                <li><a>Emprestar</a></li>           
+                
+                <li><a href="/biblioteca/public/emprestimo/create">Emprestar</a></li>           
                 <li><a href="cliente">Cadastrar Clientes</a></li>
                 <ul class="menu-list">
                     <li>
-                        <a>Cadastro no Acervo</a>
+                        <p class="menu-label">
+                            Cadastros
+                        </p>
                         <ul>
                             <li><a>Livros</a></li>
-                            <li><a>Autores</a></li>
+                            <li><a href="/biblioteca/public/autor">Autores</a></li>
                             <li><a>Generos</a></li>
                             <li><a>Editora</a></li>
                         </ul>
@@ -34,13 +36,17 @@
                 </ul>
                 <ul class="menu-list">
                     <li>
-                        <a>Consulta Clientes</a>
+                        <p class="menu-label">Consulta</p>
                         <ul>
-                            <li><a>Livros Emprestados</a></li>
+                            <li><a href="/biblioteca/public/emprestimo">Livros Emprestados</a></li>
                             <li><a>Livros em Atrazo</a></li>
                         </ul>
                     </li>
                 </ul>
+
+                @if(Auth::user()->admin == 1)
+                    <a href="/biblioteca/public/adminHome">voltar ao menu do admin</a>
+                @endif
 
             </ul>
         </aside>

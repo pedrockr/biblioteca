@@ -6,7 +6,7 @@ Route::get('/', function () {
 
 //Rota para acessar o blog
 Route::get('blogView', 'pgBlogController@index');
-//Rota para acessar a pagina de busca
+//Rotas para acessar a pagina de busca
 Route::get('buscar', 'pgBuscaController@index');
 Route::post('buscaLivro', 'pgBuscaController@buscar');
 
@@ -14,15 +14,12 @@ Route::post('buscaLivro', 'pgBuscaController@buscar');
 Route::resource('post', 'pgBlogController');
 Route::resource('busca', 'pgBuscaController');
 
-Route::get('register', function(){
-  return view ('auth.register');
-});
-
 //Rotas que necessitam autenticação
+//A partir desta linha eh requerido autenticação
 Auth::routes();
-
 Route::group(['middleware' => ['web','auth']], function(){
 	
+//Rota que redireciona do login para a pagina de respectivel nivel de acesso
   Route::get('/home', function() {
     if (Auth::user()->admin == 0) {
       return view('userHome');
@@ -32,12 +29,37 @@ Route::group(['middleware' => ['web','auth']], function(){
       return view('adminHome');
     }
   });
+//Rota para administrador acessar o painel do usuario
+Route::get('userHome', function () {
+  return view('userHome');
+});
+//Rota para o administrador voltar do painel do usuario para o painel do administrador
+Route::get('adminHome', function () {
+      if (Auth::user()->admin == 1) {
+      return view('adminHome');
+    }else {
+      return view('userHome');      
+    }
 
+});
 
-
+//Rota para editar a aparencia da homepage
 Route::resource('aparencia', 'configController')->middleware('admin');
+//Rota para CRUD cadastro de usuario
 Route::resource('usuario', 'usuarioController')->middleware('admin');
+//Rota para CRUD posts 
 Route::resource('blog', 'blogController');
+//Rota para CRUD emprestimo de livros
+Route::resource('emprestimo', 'emprestimoController');
+
+Route::post('/emprestimo/index', 'emprestimoController@buscar');
+
+
+//rota teste
+Route::get('autor', function () {
+  return view('autor.index');
+});
+
 
 
 });

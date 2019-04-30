@@ -25,7 +25,7 @@
 
                    <div class="column is-10">                        
                        <div class="box">
-                        modulo
+                        conteudo aqui!!!!
                        </div>                         
                    </div>                    
                </div>            
