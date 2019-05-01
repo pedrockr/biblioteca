@@ -26,29 +26,111 @@
 
                     <div class="column is-10">
                         <div class="box">
-
+                            <div class="column is-half">
                             <form method="post" action="{{ route('emprestimo.update', $emprestimo->id) }}">
                                 @method('PATCH')
                                 @csrf
-                                
-                                <input list="livros" name="fk_emprestimo_livros" value="{{$emprestimo->fk_emprestimo_livros}}" hidden="">
-                                <input list="livros" name="" value="{{$v_emprestimo->nome_livros}}" disabled="">
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label for="livro" class="label">Livro</label>
+                                    </div>
+                                    
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <div class="control">
+                                            <input class="input" type="hidden" list="livros" name="fk_emprestimo_livros" value="{{$emprestimo->fk_emprestimo_livros}}">
+                                            <input class="input" list="livros" name="livro" value="{{$v_emprestimo->nome_livros}}" disabled="">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                            <label class="label">Cliente</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <div class="control">
+                                            <input class="input" type="hidden" list="cliente" name="fk_emprestimo_clientes" value="{{$emprestimo->fk_emprestimo_clientes}}" >
+                                            <input class="input" list="cliente" name="f" value="{{$v_emprestimo->nome_clientes}}" disabled="">                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Usuario</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <div class="control">
+                                            <input class="input" type="hidden" name="fk_emprestimo_users" value="{{Auth::user()->id}} ">
+                                            <input class="input" type="" name="" value="{{Auth::user()->name}} " disabled="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                    <label class="label">Emprestimo</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <div class="control">
+                                            <input class="input" type="date" name="data_emprestimo" value="{{$emprestimo->data_emprestimo}}">    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                    <label class="label">Devolução</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <div class="control">
+                                            <input class="input" type="date" name="data_devolucao" value="{{$emprestimo->data_devolucao}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                    <label class="label">Devolvido</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <div class="control">
+                                            <input class="input" type="date" name="data_devolvido" value="{{$emprestimo->data_devolvido}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                                <input list="cliente" name="fk_emprestimo_clientes" value="{{$emprestimo->fk_emprestimo_clientes}}" hidden="">
-                                <input list="cliente" name="f" value="{{$v_emprestimo->nome_clientes}}" disabled="">
+                                <div class="field is-horizontal">
+                                    <div class="field-label">
+                                        <!-- espaço -->
+                                    </div>
+                                    <div class="field">
+                                        <div class="field">
+                                            <div class="control">
+                                                <button class = "button is-link" type="input">Emprestar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
+                               </form>
 
-                                <input type="hidden" name="fk_emprestimo_users" value="{{Auth::user()->id}} ">
-                                <input type="" name="" value="{{Auth::user()->name}} " disabled="">
+                                <!-- {{ $diff = Carbon\Carbon::parse($v_emprestimo -> data_emprestimo)->addWeek(1)}} -->
 
-                                <input type="date" name="data_emprestimo" value="{{$emprestimo->data_emprestimo}}">
-                                <input type="date" name="data_devolucao" value="{{$emprestimo->data_devolucao}}">
-                                <input type="date" name="data_devolvido" value="{{$emprestimo->data_devolvido}}">
-
-
-
-                            <button type="input">Atualizar</button>
                             
                            	</form>
                         </div>                         

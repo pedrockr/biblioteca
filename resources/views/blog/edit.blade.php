@@ -27,17 +27,69 @@
                     <div class="column is-10">
                         <div class="box">
 
-                            <form method="post" action="{{ route('blog.update', $blog->id) }}">
-                                @method('PATCH')
+                        <form method="post" action="{{route('blog.update', $blog->id)}}">
+                        @method('PATCH')
                                 @csrf
-                            <input type="text" name="blogPost_titulo" value="{{ $blog->blogPost_titulo }}">
-                            <input type="text" name="blogPost_msg" value="{{ $blog->blogPost_msg }}">
-                            <input type="text" name="blogPost_autor" value="{{ $blog->blogPost_autor }}">
-                            <input type="text" name="blogPost_data" value="{{ $blog->blogPost_data }}">
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="label">De</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <p class="control is-expanded">
+                                        <input class="input" type="text" placeholder="Nome Autor" name="blogPost_autor" value="{{ $blog->blogPost_autor }}">
+                                      </p>
+                                    </div>
+                                    <div class="field">
+                                      <p class="control is-expanded">
+                                        <input class="input" type="date" placeholder="Data" name="blogPost_data" value="{{ $blog->blogPost_data }}">
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
 
-                            <button type="input">Atualizar</button>
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="label">Titulo</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <input class="input" type="text" placeholder="Titulo da Postagem" name="blogPost_titulo" value="{{ $blog->blogPost_titulo }}">
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
+                                    <label class="label">Postagem</label>
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <textarea class="textarea" placeholder="Crie sua postagem aqui" name = "blogPost_msg" value="{{ $blog->blogPost_msg }}">{{ $blog->blogPost_msg }}</textarea>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="field is-horizontal">
+                                  <div class="field-label">
+                                    <!-- Left empty for spacing -->
+                                  </div>
+                                  <div class="field-body">
+                                    <div class="field">
+                                      <div class="control">
+                                        <button class="button is-link">
+                                          Atualizar postagem
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>                               
                             
-                           	</form>
                         </div>                         
                     </div>                    
                 </div>            

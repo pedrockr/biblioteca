@@ -51,8 +51,10 @@ Route::resource('usuario', 'usuarioController')->middleware('admin');
 Route::resource('blog', 'blogController');
 //Rota para CRUD emprestimo de livros
 Route::resource('emprestimo', 'emprestimoController');
-
+//Rota auxiliar para busca de livros emprestados
 Route::post('/emprestimo/index', 'emprestimoController@buscar');
+//Rota para cadastro de livros
+Route::resource('livro', 'livroController');
 
 
 //rota teste

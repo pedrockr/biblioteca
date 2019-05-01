@@ -49,7 +49,7 @@ class emprestimoController extends Controller
             'data_devolucao' => $request->get('data_devolucao'),
         ]);
         $emprestimo -> save();
-        return redirect('/emprestimo/edit');
+        return redirect('/emprestimo/create');
     }
     public function show($id)
     {

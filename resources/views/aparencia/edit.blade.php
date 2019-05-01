@@ -102,7 +102,7 @@
                                 </div>
 
                                 <div class="field is-grouped is-grouped-right">
-                                    <button type="submit">Atualizar</button>
+                                    <button class="button is-link" type="submit">Atualizar</button>
                                 </div>
 
                            	</form>
