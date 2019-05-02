@@ -55,14 +55,18 @@ Route::resource('emprestimo', 'emprestimoController');
 Route::post('/emprestimo/index', 'emprestimoController@buscar');
 //Rota para cadastro de livros
 Route::resource('livro', 'livroController');
+//Rota auxiliar para busca de livros
 Route::post('/livro/index', 'livroController@buscar');
-
-
-//rota teste
-Route::get('autor', function () {
-  return view('autor.index');
-});
-
+//Rota para CRUD clientes
+Route::resource('cliente', 'ClienteController');
+//Rota para CRUD autor
+Route::resource('autor', 'AutorController');
+//Rota para CRUD genero
+Route::resource('genero', 'GeneroController');
+//Rota para CRUD editora
+Route::resource('editora', 'EditoraController');
+//Rota para CRUD prateleira
+Route::resource('prateleira', 'PrateleiraController');
 
 
 });

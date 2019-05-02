@@ -30,9 +30,10 @@
                         <ul>
                             <li><a href="/biblioteca/public/livro/create">Livros</a></li>
                             <li><a href="/biblioteca/public/autor">Autores</a></li>
-                            <li><a href="#">Generos</a></li>
-                            <li><a href="#">Editora</a></li>
-                            <li><a href="cliente">Cadastrar Clientes</a></li>
+                            <li><a href="/biblioteca/public/genero">Generos</a></li>
+                            <li><a href="/biblioteca/public/editora">Editora</a></li>
+                            <li><a href="/biblioteca/public/prateleira">Localização</a></li>
+                            <li><a href="/biblioteca/public/cliente">Clientes</a></li>
                         </ul>
                     </li>
                     <li>
