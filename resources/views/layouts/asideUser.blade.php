@@ -14,39 +14,46 @@
 
 <body>
         <aside class="menu is-hidden-mobile">
-            <p class="menu-label">
-                General
-            </p>
+            <p class="menu-label">General</p>
+
+            @if(Auth::user()->admin == 1)
+                    <a href="/biblioteca/public/adminHome">Voltar ao menu do admin</a>
+            @endif
+
+             <p class="menu-label"></p> <!-- pular linha -->
+            
+
             <ul class="menu-list ">
-                
-                <li><a href="/biblioteca/public/emprestimo/create">Emprestar</a></li>           
-                <li><a href="cliente">Cadastrar Clientes</a></li>
                 <ul class="menu-list">
                     <li>
-                        <p class="menu-label">
-                            Cadastros
-                        </p>
+                        <p class="menu-label">Cadastrar</p>
                         <ul>
-                            <li><a>Livros</a></li>
+                            <li><a href="/biblioteca/public/livro/create">Livros</a></li>
                             <li><a href="/biblioteca/public/autor">Autores</a></li>
-                            <li><a>Generos</a></li>
-                            <li><a>Editora</a></li>
+                            <li><a href="#">Generos</a></li>
+                            <li><a href="#">Editora</a></li>
+                            <li><a href="cliente">Cadastrar Clientes</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <p class="menu-label">Editar</p>
+                        <ul>                            
+                            <li><a href="/biblioteca/public/livro">Livros</a></li>
+                        </ul>
+                    </li>                    
                 </ul>
                 <ul class="menu-list">
                     <li>
-                        <p class="menu-label">Consulta</p>
+                        <p class="menu-label">Emprestimo</p>
                         <ul>
+                            <li><a href="/biblioteca/public/emprestimo/create">Emprestar</a></li> 
                             <li><a href="/biblioteca/public/emprestimo">Livros Emprestados</a></li>
                             <li><a>Livros em Atrazo</a></li>
                         </ul>
                     </li>
                 </ul>
 
-                @if(Auth::user()->admin == 1)
-                    <a href="/biblioteca/public/adminHome">voltar ao menu do admin</a>
-                @endif
+
 
             </ul>
         </aside>

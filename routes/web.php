@@ -55,6 +55,7 @@ Route::resource('emprestimo', 'emprestimoController');
 Route::post('/emprestimo/index', 'emprestimoController@buscar');
 //Rota para cadastro de livros
 Route::resource('livro', 'livroController');
+Route::post('/livro/index', 'livroController@buscar');
 
 
 //rota teste

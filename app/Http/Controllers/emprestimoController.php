@@ -25,11 +25,7 @@ class emprestimoController extends Controller
         ['nome_livros', 'LIKE', '%'.$request->buscaLivro.'%'],
         ['nome_clientes', 'LIKE', '%'.$request->buscaCliente.'%'],
         ])->get();
-        $emprestimo = v_emprestimo::where([
-        ['nome_livros', 'LIKE', '%'.$request->buscaLivro.'%'],
-        ['nome_clientes', 'LIKE', '%'.$request->buscaCliente.'%'],
-        ])->get();
-        return view ('emprestimo.index', ['v_emprestimo'=>$v_emprestimo , 'emprestimo'=>$emprestimo]);
+        return view ('emprestimo.index', ['v_emprestimo'=>$v_emprestimo]);
     }
     public function create()
     {

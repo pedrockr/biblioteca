@@ -9,6 +9,12 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <style>
+        
+        td{font-size: 8pt;}
+        .semQuebra{white-space: nowrap;}
+        
+    </style>
 
 </head>
 <body>
@@ -33,11 +39,9 @@
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
                                         <label class="label">Livro</label>
-                                    </div>
-                                    
+                                    </div>                                    
                                     <div class="field-body">
                                         <div class="field">
-
                                         <p class="control is-expanded">
                                             <input class = "input" autofocus list="livros" name="fk_emprestimo_livros">
                                             <datalist id="livros">
@@ -110,17 +114,18 @@
 
 
                                 <div class="field is-horizontal">
-                                    <div class="field-label">
-                                        <!-- espaço -->
-                                    </div>
-                                    <div class="field">
+                                        <div class="field-label">
+                                            <!-- espaço -->
+                                        </div>
                                         <div class="field">
-                                            <div class="control">
-                                                <button class = "button is-link" type="input">Emprestar</button>
+                                            <div class="field">
+                                                <div class="control">
+                                                    <button class = "button is-link" type="input">Emprestar</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+    
 
                                </form>
                                </div>
