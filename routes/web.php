@@ -48,7 +48,7 @@ Route::resource('aparencia', 'configController')->middleware('admin');
 //Rota para CRUD cadastro de usuario
 Route::resource('usuario', 'usuarioController')->middleware('admin');
 //Rota para CRUD posts 
-Route::resource('blog', 'blogController');
+Route::resource('blog', 'blogController')->middleware('admin');
 //Rota para CRUD emprestimo de livros
 Route::resource('emprestimo', 'emprestimoController');
 //Rota auxiliar para busca de livros emprestados

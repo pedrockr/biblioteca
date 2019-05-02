@@ -31,6 +31,11 @@
                     <div class="box">
                       <form action="{{route('cliente.store')}}" method="post">
                         @csrf
+
+                        
+                          
+                        
+                                                
                         
                         <div class="field is-horizontal">
                             <div class="field-label is-normal">
