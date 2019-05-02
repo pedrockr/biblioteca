@@ -11,8 +11,7 @@
 
     <style>
         td{font-size: 8pt;}
-        .semQuebra{white-space: nowrap;}
-    
+        .semQuebra{white-space: nowrap;}    
     </style>
 
 </head>
@@ -110,6 +109,24 @@
                       </form>
 
                       <hr>
+
+                      <div class="column">
+                      <form action="{{url('/cliente/index')}}" method="post">
+                        {{ csrf_field() }}
+                        <div class="field is-horizontal">
+                          <div class="field">
+                          <label for="">Nome</label>
+                        <input class="input is-small" type="text" name="buscaCliente" style="width:70%;">
+                          </div>
+                          <div>
+                        <label for="">Email</label>
+                        <input class="input is-small" type="text" name="buscaEmail" style="width:70%;">
+                          </div>
+                        <button class="button is-link is-small" type="submit">Buscar</button>
+                        </div>
+
+                      </form>
+                      </div>
                       
                       <table class="table is-fullwidth">
                         <thead>

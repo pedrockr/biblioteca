@@ -12,6 +12,14 @@ class ClienteController extends Controller
         $cliente = cliente::all();
         return view('cliente.index', compact('cliente'));
     }
+    public function buscar(Request $request){
+        
+        $cliente = cliente::where([
+        ['nome_clientes', 'LIKE', '%'.$request->buscaCliente.'%'],
+        ['email_clientes', 'LIKE', '%'.$request->buscaEmail.'%'],
+        ])->get();
+        return view ('cliente.index', compact('cliente'));
+    }
     public function create()
     {
         //
