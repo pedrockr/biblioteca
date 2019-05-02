@@ -20,7 +20,9 @@
               <div class="columns">
                   <div class="column is-2">
                       @include('layouts.asideUser')
-                  </div>                                       
+                  </div>
+                  <div class="column is-10">
+                      <div class="box">                                       
 
                   <form action="{{route('genero.update', $genero->id)}}" method="post">
                       @method('PATCH')
@@ -55,7 +57,7 @@
                      </div>                         
                   </div>                    
               </div>            
-          </div>                
+                          
       </section>
     </div>
     

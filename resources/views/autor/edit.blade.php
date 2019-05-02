@@ -20,7 +20,9 @@
               <div class="columns">
                   <div class="column is-2">
                       @include('layouts.asideUser')
-                  </div>                                       
+                  </div> 
+                  <div class="column is-10">
+                      <div class="box">                                     
 
                   <form action="{{route('autor.update', $autor->id)}}" method="post">
                       @method('PATCH')
@@ -33,7 +35,7 @@
                           <div class="field-body">
                             <div class="field">
                               <p class="control is-expandedt">
-                              <input class="input is-small" type="text" name="nome_autores" id="nome_autores" value="{{$autor->nome_autores}}">
+                              <input class="input is-small" type="text" name="nome_autores" id="nome_autores" value="{{$autor->nome_autores}}" style="width:70%;">
                               </p>
                             </div>
                           </div>                             
