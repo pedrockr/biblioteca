@@ -24,6 +24,11 @@
 
                     <div class="column is-10">
                         <div class="box">
+                            <nav class="level">
+                                <div class="level-item">
+                                  <p>Cadastrar usuario</p>
+                                </div>
+                            </nav> 
                             <div class="column is-5">
 
                             <form method="post" action="{{ route('usuario.store') }}">
@@ -111,6 +116,12 @@
                         </div>
 
                             <hr>
+
+                            <nav class="level">
+                                <div class="level-item">
+                                  <p>Usuarios cadastrados</p>
+                                </div>
+                            </nav> 
 
                             <table class="table is-fullwidth">
                                 <thead>

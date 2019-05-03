@@ -17,9 +17,9 @@
 </head>
 <body>
 
-    @include('layouts.app')    
-    <div class="hero is-fullheight is-light ">
+  @include('layouts.app') 
 
+    <div class="hero is-fullheight is-light ">
       <section class="section">
           <div class="container">
               <div class="columns">
@@ -29,14 +29,13 @@
 
                   <div class="column is-11">
                     <div class="box">
+                      <nav class="level">
+                        <div class="level-item">
+                          <p>Cadastro de Clientes</p>
+                        </div>
+                      </nav>
                       <form action="{{route('cliente.store')}}" method="post">
                         @csrf
-
-                        
-                          
-                        
-                                                
-                        
                         <div class="field is-horizontal">
                             <div class="field-label is-normal">
                               <label class="label">Nome</label>
@@ -48,15 +47,15 @@
                                 </p>
                               </div>
                               <div class="field-label is-normal">
-                                  <label class="label">Email</label>
+                                <label class="label">Email</label>
                               </div>
                               <div class="field">
                                 <p class="control is-expanded">
-                                    <input class="input is-small" type="email" name="email_clientes" id="email_clientes">
+                                  <input class="input is-small" type="email" name="email_clientes" id="email_clientes">
                                 </p>
                               </div>
                             </div>
-                          </div>
+                        </div>
 
                           <div class="field is-horizontal">
                               <div class="field-label is-normal">
@@ -114,6 +113,12 @@
                       </form>
 
                       <hr>
+
+                      <nav class="level">
+                          <div class="level-item">
+                            <p>Clientes Cadastrados
+                          </div>
+                      </nav>
 
                       <div class="column">
                       <form action="{{url('/cliente/index')}}" method="post">

@@ -29,6 +29,11 @@
                   </div>                                    
                   <div class="column is-10">
                     <div class="box">
+                        <nav class="level">
+                            <div class="level-item">
+                              <p>Cadastrar genero</p>
+                            </div>
+                        </nav>
 
                       <div class="column is-5">
                       <form action="{{route('genero.store')}}" method="post">
@@ -61,6 +66,12 @@
                     </div>
 
                       <hr>
+
+                      <nav class="level">
+                          <div class="level-item">
+                            <p>Generos cadastrados</p>
+                          </div>
+                      </nav>
 
                       <div class="column is-7">
                           <form method="post" action="{{url('/genero/index')}}">

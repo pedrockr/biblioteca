@@ -30,6 +30,12 @@
                   <div class="column is-10">
                     <div class="box">
 
+                        <nav class="level">
+                            <div class="level-item">
+                              <p>Cadastrar editora</p>
+                            </div>
+                        </nav> 
+
                       <div class="column is-5">
                       <form action="{{route('editora.store')}}" method="post">
                         @csrf
@@ -61,6 +67,12 @@
                     </div>
 
                       <hr>
+
+                      <nav class="level">
+                          <div class="level-item">
+                            <p>Editoras Cadastradas</p>
+                          </div>
+                      </nav> 
 
                       <div class="column is-7">
                           <form method="post" action="{{url('/editora/index')}}">

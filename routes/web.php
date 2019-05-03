@@ -1,4 +1,6 @@
 <?php
+use App\v_emprestimo;
+
 //Rota para a pagina inicial
 Route::get('/', function () {
   return view('pgInicial');
@@ -82,6 +84,10 @@ Route::post('/editora/index', 'EditoraController@buscar');
 Route::resource('prateleira', 'PrateleiraController');
 //Rota auxiliar para busca de prateleiras
 Route::post('/prateleira/index', 'PrateleiraController@buscar');
+
+Route::get('/em_atraso', function () {
+  return view('layouts.livrosAtraso');
+});
 
 
 });

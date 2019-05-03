@@ -22,7 +22,12 @@
                       @include('layouts.asideUser')
                   </div> 
                   <div class="column is-10">
-                      <div class="box">                                     
+                      <div class="box">  
+                          <nav class="level">
+                              <div class="level-item">
+                                <p>Editar cadastro autores</p>
+                              </div>
+                          </nav>                                   
 
                   <form action="{{route('autor.update', $autor->id)}}" method="post">
                       @method('PATCH')

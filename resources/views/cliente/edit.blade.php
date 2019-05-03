@@ -24,6 +24,11 @@
 
                   <div class="column is-10">
                     <div class="box">
+                        <nav class="level">
+                            <div class="level-item">
+                              <p>Editar registro de clientes</p>
+                            </div>
+                          </nav>
                         <form action="{{route('cliente.update', $cliente->id)}}" method="post">
                             @method('PATCH')
                             @csrf

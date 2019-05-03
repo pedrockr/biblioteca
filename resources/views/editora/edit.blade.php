@@ -20,7 +20,14 @@
               <div class="columns">
                   <div class="column is-2">
                       @include('layouts.asideUser')
-                  </div>                                       
+                  </div>
+                  <div class="column is-10">
+                      <div class="box"> 
+                  <nav class="level">
+                      <div class="level-item">
+                        <p>Alterar editoras cadastradas</p>
+                      </div>
+                  </nav>                                      
 
                   <form action="{{route('editora.update', $editora->id)}}" method="post">
                       @method('PATCH')

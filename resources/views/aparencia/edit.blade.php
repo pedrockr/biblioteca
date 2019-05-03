@@ -23,6 +23,11 @@
 
                     <div class="column is-10">
                         <div class="box">
+                                <nav class="level">
+                                        <div class="level-item">
+                                          <p>Modificar aparecia da pagina inicial</p>
+                                        </div>
+                                    </nav> 
                             <div class="columns">
                             <div class="column is-half is-centered">
                             <form action="{{ route('aparencia.update', $aparencia->id) }}" method="post">
@@ -32,13 +37,13 @@
                                 <div class="field">
                                     <label class="label">Texto Aba Nagegador</label>
                                     <div class="control">
-                                        <input class="input has-text-centered is-dark" id="NavBrand" name="NavBrand" type="" value="{{$aparencia -> NavBrand}}">
+                                        <input class="input has-text-centered" id="NavBrand" name="NavBrand" type="" value="{{$aparencia -> NavBrand}}">
                                     </div>
                                 </div>
 
                                 <div class="field">
                                     <label class="label">Imagem de Fundo Pagina Inicial</label>
-                                    <div class="select is-dark">
+                                    <div class="select">
                                         <select class="" name="imgHero">
                                             <option value= "book" <?php if($aparencia -> imgHero == "book")echo("selected = '' ") ?> >Imagem 1</option>
                                             <option value="book1" <?php if($aparencia -> imgHero == "book1")echo("selected = '' ") ?> >Imagem 2</option>
@@ -52,7 +57,7 @@
                                 <div class="field">
                                     <label class="label">Titulo da Pagina Inicial</label>
                                     <div class="control">
-                                        <input class="input has-text-centered is-dark" id="tituloPgInicial" name="tituloPgInicial" type="" value="{{$aparencia -> tituloPgInicial}}">
+                                        <input class="input has-text-centered" id="tituloPgInicial" name="tituloPgInicial" type="" value="{{$aparencia -> tituloPgInicial}}">
                                     </div>
                                 </div>
 
@@ -61,13 +66,13 @@
                                     <div class="control">
 
 
-                                        <textarea class="textarea is-dark" id="subtituloPgInicial" name="subtituloPgInicial" type="" >{{$aparencia -> subtituloPgInicial}}</textarea>
+                                        <textarea class="textarea" id="subtituloPgInicial" name="subtituloPgInicial" type="" >{{$aparencia -> subtituloPgInicial}}</textarea>
                                     </div>
                                 </div>
 
                                 <div class="field">
                                     <label class="label">Cor da fonte da pagina inicial</label>
-                                    <div class="select is-dark">
+                                    <div class="select">
                                         <select class="" name="CorCaracter">
                                         <option value="white" <?php if($aparencia -> CorCaracter == "white")echo("selected = '' ") ?> >Branco</option>
                                         <option value="black" <?php if($aparencia -> CorCaracter == "black")echo("selected = '' ") ?> >Preto</option>
@@ -77,7 +82,7 @@
 
                                 <div class="field">
                                     <label class="label">Cor de fundo pagina de busca</label>
-                                    <div class="select is-dark">
+                                    <div class="select">
                                         <select class="" name="corBusca">
                                         <option value="lightyellow" <?php if($aparencia -> corBusca == "lightyellow")echo("selected = '' ") ?>>Amarelo</option>
                                         <option value="lightcyan" <?php if($aparencia -> corBusca == "lightcyan")echo("selected = '' ") ?>>Ciano</option>

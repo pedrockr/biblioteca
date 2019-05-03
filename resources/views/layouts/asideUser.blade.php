@@ -15,8 +15,9 @@
 <body>
         <aside class="menu is-hidden-mobile">
             <p class="menu-label">General</p>
-
+            <a href="/biblioteca/public/userHome">Home</a><br><br>
             @if(Auth::user()->admin == 1)
+                    
                     <a href="/biblioteca/public/adminHome">Voltar ao menu do admin</a>
             @endif
 
@@ -49,7 +50,7 @@
                         <ul>
                             <li><a href="/biblioteca/public/emprestimo/create">Emprestar</a></li> 
                             <li><a href="/biblioteca/public/emprestimo">Livros Emprestados</a></li>
-                            <li><a>Livros em Atrazo</a></li>
+                            <li><a href="/biblioteca/public/em_atraso">Livros em Atrazo</a></li>
                         </ul>
                     </li>
                 </ul>

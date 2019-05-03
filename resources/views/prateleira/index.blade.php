@@ -29,6 +29,11 @@
                   </div>                                    
                   <div class="column is-10">
                     <div class="box">
+                        <nav class="level">
+                            <div class="level-item">
+                              <p>Cadasdastrar seção</p>
+                            </div>
+                        </nav>
 
                       <div class="column">
                       <form action="{{route('prateleira.store')}}" method="post">
@@ -70,6 +75,12 @@
                     </div>
 
                       <hr>
+
+                      <nav class="level">
+                          <div class="level-item">
+                            <p>Seções cadastradas</p>
+                          </div>
+                      </nav>
 
                       <div class="column is-7">
                           <form method="post" action="{{url('/prateleira/index')}}">

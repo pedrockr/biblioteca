@@ -68,16 +68,41 @@
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title">10</p>
+                                <p class="title">
+
+                                    <?php
+                                    $teste = 0;
+                                    foreach($atraso as $atraso){
+                                        if( $atraso -> data_devolvido > $atraso -> data_devolucao ){
+                                            $teste = $teste + 1;
+                                        }
+                                    } 
+                                    echo($teste);
+                                    ?>
+                                    
+                                    {{-- @foreach ($atraso as $atraso)
+                                    @if( $atraso -> data_devolvido > $atraso -> data_devolucao )                                   
+                                        
+
+                                            {{-- <p class="has-text-danger">{{ $diff = Carbon\Carbon::parse($atraso -> data_devolvido)->diffForHumans(Carbon\Carbon::parse($atraso -> data_devolucao)) }}</p> </td>
+                                    @endif
+
+                                        
+                                    @endforeach --}}
+                                    
+
+
+
+                                </p>
                                 <p class="subtitle">Livros em atraso</p>
                             </article>
                         </div>
-                        <div class="tile is-parent">
+                        {{-- <div class="tile is-parent">
                             <article class="tile is-child box"> <a href="#">
                                 <p class="title">19</p>
                                 <p class="subtitle">Pedidos de livros</p></a>
                             </article>
-                        </div>
+                        </div> --}}
                     </div>
                 </section>
                        </div>                         

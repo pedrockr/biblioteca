@@ -34,6 +34,9 @@ class AppServiceProvider extends ServiceProvider
 
         $qtdClientes = DB::table('qtdClientes')->get();
         View::share('qtdClientes', $qtdClientes);
+
+        $atraso = DB::table('v_emprestimos')->get();
+        View::share('atraso', $atraso);
         
     }
 }

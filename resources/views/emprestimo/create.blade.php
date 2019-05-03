@@ -32,6 +32,11 @@
 
                     <div class="column is-10">
                         <div class="box">
+                                <nav class="level">
+                                        <div class="level-item">
+                                          <p>Cadastrar novo emprestimo</p>
+                                        </div>
+                                    </nav> 
                             <div class="column is-half">
                             <form method="post" action="{{route('emprestimo.store')}}">
                                 @csrf

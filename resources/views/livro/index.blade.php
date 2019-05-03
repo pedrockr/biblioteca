@@ -29,6 +29,11 @@
 
                     <div class="column is-10">
                         <div class="box">
+                                <nav class="level">
+                                        <div class="level-item">
+                                          <p>Livros Cadastrados</p>
+                                        </div>
+                                    </nav> 
                             <div class="column is-8">
                                 <form method="post" action="{{url('/livro/index')}}">
                                     {{ csrf_field() }}

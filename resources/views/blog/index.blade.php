@@ -24,6 +24,11 @@
 
                     <div class="column is-10">
                         <div class="box">
+                            <nav class="level">
+                                <div class="level-item">
+                                  <p>Criar nova postagem</p>
+                                </div>
+                            </nav> 
 
                             <form method="post" action="{{route('blog.store')}}">
                                 @csrf
@@ -91,6 +96,12 @@
                             </form>
 
                             <hr>
+
+                            <nav class="level">
+                                <div class="level-item">
+                                  <p>Postagens ativas</p>
+                                </div>
+                            </nav> 
 
                             <table class="table is-fullwidth">
                                 <thead>

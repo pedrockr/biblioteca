@@ -27,6 +27,12 @@
                     <div class="column is-10">
                         <div class="box">
 
+                            <nav class="level">
+                                <div class="level-item">
+                                  <p>Modificar postagem</p>
+                                </div>
+                            </nav> 
+
                         <form method="post" action="{{route('blog.update', $blog->id)}}">
                         @method('PATCH')
                                 @csrf

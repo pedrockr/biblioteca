@@ -26,6 +26,11 @@
 
                     <div class="column is-10">
                         <div class="box">
+                                <nav class="level">
+                                        <div class="level-item">
+                                          <p>Editar emprestimo</p>
+                                        </div>
+                                    </nav> 
                             <div class="column is-half">
                             <form method="post" action="{{ route('emprestimo.update', $emprestimo->id) }}">
                                 @method('PATCH')
@@ -121,7 +126,7 @@
                                     <div class="field">
                                         <div class="field">
                                             <div class="control">
-                                                <button class = "button is-link" type="input">Emprestar</button>
+                                                <button class = "button is-link" type="input">Atualizar</button>
                                             </div>
                                         </div>
                                     </div>

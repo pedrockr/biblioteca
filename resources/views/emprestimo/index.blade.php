@@ -31,6 +31,11 @@
 
                     <div class="column is-11">
                         <div class="box">
+                                <nav class="level">
+                                        <div class="level-item">
+                                          <p>Emprestimos realizados</p>
+                                        </div>
+                                    </nav> 
                             <div class="column is-8">
                                 <form method="post" action="{{url('/emprestimo/index')}}">
                                     {{ csrf_field() }}
