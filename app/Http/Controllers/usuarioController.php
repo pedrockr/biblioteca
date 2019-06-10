@@ -23,6 +23,7 @@ class usuarioController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => Hash::make($request['password']),
+            'admin' => $request->get('admin'),
         ]);
 
         $usuario -> save();
